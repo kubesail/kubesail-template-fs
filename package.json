@@ -1,0 +1,70 @@
+{
+  "name": "kubesail-template-fs",
+  "displayName": "KubeSailTemplateFS - KubeSail App template editing simplified",
+  "description": "Edit your KubeSail templates within VS Code.",
+  "version": "0.0.1",
+  "publisher": "KubeSail",
+  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Microsoft/vscode-extension-samples"
+  },
+  "engines": {
+    "vscode": "^1.32.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onFileSystem:kubesailtemplatefs",
+    "onCommand:kubesailtemplatefs.workspaceInit",
+    "onCommand:kubesailtemplatefs.init",
+    "onCommand:kubesailtemplatefs.reset"
+  ],
+  "main": "./out/src/extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "kubesailtemplatefs.workspaceInit",
+        "title": "Initialize Workspace",
+        "category": "KubeSail Template FS"
+      },
+      {
+        "command": "kubesailtemplatefs.setApiKey",
+        "title": "Set KubeSail API Key",
+        "category": "KubeSail Template FS"
+      },
+      {
+        "command": "kubesailtemplatefs.setApiSecret",
+        "title": "Set KubeSail API Secret",
+        "category": "KubeSail Template FS"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "kubesailtemplatefs.workspaceInit"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "lint": "eslint . --ext .ts,.tsx",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.7",
+    "@types/vscode": "^1.32.0",
+    "@typescript-eslint/eslint-plugin": "^5.30.0",
+    "@typescript-eslint/parser": "^5.30.0",
+    "eslint": "^8.13.0",
+    "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "isomorphic-fetch": "^3.0.0",
+    "node-fetch": "^2.6.7"
+  }
+}
